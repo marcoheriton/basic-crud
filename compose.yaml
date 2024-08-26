@@ -1,0 +1,30 @@
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:15.7
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: SICSADM
+      POSTGRES_DB: postgres
+    volumes:
+      - /pgdata/:/var/lib/postgresql/data
+    networks:
+      - crud
+  
+  crud:
+    image: crud
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: crud
+    depends_on:
+      - postgres
+    ports:
+      - 8501:8501
+    networks:
+      - crud
+
+networks:
+  crud:
+    driver: bridge

@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "/home/marco/desenv/streamlit/crud/.venv/bin/streamlit",
             "console": "integratedTerminal",
-            "args": ["run","/home/marco/desenv/streamlit/crud/app/crud.py"]
+            "args": ["run","/home/marco/desenv/streamlit/crud/app/app.py"]
         }
     ]
 }
